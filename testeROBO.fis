@@ -1,0 +1,79 @@
+[System]
+Name='testeROBO'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=2
+NumRules=5
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='frente'
+Range=[0 3]
+NumMFs=5
+MF1='MP':'trapmf',[-0.675 -0.075 0.075 0.675]
+MF2='P':'trimf',[0 0.75 1.5]
+MF3='N':'trimf',[0.75 1.5 2.25]
+MF4='L':'trimf',[1.5 2.25 3]
+MF5='ML':'trapmf',[2.325 2.925 3.075 3.675]
+
+[Input2]
+Name='direita'
+Range=[0 3]
+NumMFs=5
+MF1='MP':'trapmf',[-0.675 -0.075 0.075 0.675]
+MF2='P':'trimf',[0 0.75 1.5]
+MF3='N':'trimf',[0.75 1.5 2.25]
+MF4='L':'trimf',[1.5 2.25 3]
+MF5='ML':'trapmf',[2.325 2.925 3.075 3.675]
+
+[Input3]
+Name='esquerda'
+Range=[0 3]
+NumMFs=5
+MF1='MP':'trapmf',[-0.675 -0.075 0.075 0.675]
+MF2='P':'trimf',[0 0.75 1.5]
+MF3='N':'trimf',[0.75 1.5 2.25]
+MF4='L':'trimf',[1.5 2.25 3]
+MF5='ML':'trapmf',[2.325 2.925 3.075 3.675]
+
+[Input4]
+Name='tras'
+Range=[0 3]
+NumMFs=5
+MF1='MP':'trapmf',[-0.675 -0.075 0.075 0.675]
+MF2='P':'trimf',[0 0.75 1.5]
+MF3='N':'trimf',[0.75 1.5 2.25]
+MF4='L':'trimf',[1.5 2.25 3]
+MF5='ML':'trapmf',[2.325 2.925 3.075 3.675]
+
+[Output1]
+Name='we'
+Range=[-0.5 0.5]
+NumMFs=5
+MF1='S':'trapmf',[-0.725 -0.525 -0.475 -0.275]
+MF2='SO':'trimf',[-0.5 -0.25 0]
+MF3='Z':'trimf',[-0.25 0 0.25]
+MF4='NO':'trimf',[0 0.25 0.5]
+MF5='N':'trapmf',[0.275 0.475 0.525 0.725]
+
+[Output2]
+Name='wd'
+Range=[-0.5 0.5]
+NumMFs=5
+MF1='S':'trapmf',[-0.725 -0.525 -0.475 -0.275]
+MF2='SE':'trimf',[-0.5 -0.25 0]
+MF3='Z':'trimf',[-0.25 0 0.25]
+MF4='NE':'trimf',[0 0.25 0.5]
+MF5='N':'trapmf',[0.275 0.475 0.525 0.725]
+
+[Rules]
+5 5 5 5, 5 5 (1) : 1
+5 1 1 1, 5 5 (1) : 1
+1 5 1 1, 3 4 (1) : 1
+1 1 5 1, 4 3 (1) : 1
+1 1 1 5, 1 1 (1) : 1

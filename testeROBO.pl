@@ -1,6 +1,6 @@
 
-pPerto(X) :- X =< 1.
-pLonge(X) :- X > 1.
+pPerto(X) :- X =< 0.3.
+pLonge(X) :- X > 0.3.
 
 
 
